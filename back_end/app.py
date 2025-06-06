@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
 
 app = Flask(__name__)
-CORS(app, resources={r'/*': {'origins': '*'}}, supports_credentials=True)
+CORS(app, resources={r'/*': {'origins': ['https://sofa314.github.io']}}, supports_credentials=True)
 
 # Load the models
 heart_model = joblib.load("heart_breast/gradin_boost_model.pkl")
