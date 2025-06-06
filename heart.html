@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="image/favicon/heart.png">
+
+    <title>Heart</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/heart.css">
+    <!-- Font Awesome for heart icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Start Header -->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span data-i18n="heartDisease">Heart Disease</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-i18n="home">Home</a></li>
+                    <li><a href="brest.html" data-i18n="breastCancer">Breast Cancer</a></li>
+                    <li><a href="skin.html" data-i18n="skinCancer">Skin Cancer</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-toggle-btn" type="button" aria-label="Toggle language">
+                    <div class="flag-wrapper en active" style="margin-right: 8px; display: flex; align-items: center; gap: 4px; position: relative;">
+                        <img src="image/flags/uk.png" alt="English" class="flag-icon" data-lang="en" style="width: 24px; height: 18px; position: relative; z-index: 1;">
+                        <span class="flag-name" data-i18n="english" style="font-size: 14px; position: relative; z-index: 1; color: #333;">English</span>
+                    </div>
+                    <div class="flag-wrapper ar" style="margin-left: 8px; display: flex; align-items: center; gap: 4px; position: relative;">
+                        <img src="image/flags/egypt.png" alt="Arabic" class="flag-icon" data-lang="ar" style="width: 24px; height: 18px; position: relative; z-index: 1;">
+                        <span class="flag-name" data-i18n="arabic" style="font-size: 14px; position: relative; z-index: 1; color: #333;">عربي</span>
+                    </div>
+                </button>
+            </div>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Main Section -->
+    <section class="main-content">
+        <div class="container">
+            <div class="heart-info">
+                <div class="text-content">
+                    <h2 data-i18n="heartTitle">Understanding Your Heart</h2>
+                    <p data-i18n="heartIntro">The heart is a vital organ that pumps blood throughout your body. It works tirelessly, beating about 100,000 times per day to deliver oxygen and nutrients to every cell.</p>
+                    <p data-i18n="heartDescription">A healthy heart is crucial for overall well-being. Regular exercise, proper diet, and stress management are key factors in maintaining heart health.</p>
+                    <ul class="heart-facts">
+                        <li data-i18n="beatsPerDay">Beats 100,000 times per day</li>
+                        <li data-i18n="pumpsBlood">Pumps about 2,000 gallons of blood daily</li>
+                        <li data-i18n="chambers">Contains four chambers</li>
+                        <li data-i18n="electricalSystem">Has its own electrical system</li>
+                    </ul>
+                </div>
+                <div class="image-gallery">
+                    <img src="image/Heart/9364750.jpg" alt="Heart Anatomy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Main Section -->
+
+    <!-- Add this after your main-content section -->
+    <section class="symptoms-content" style="display: none;">
+        <div class="container">
+            <div class="heart-info">
+                <div class="text-content">
+                    <h2 data-i18n="heartDiseaseSymptoms">Heart Disease Symptoms</h2>
+                    <p data-i18n="commonSymptoms">Common symptoms of heart disease include:</p>
+                    <ul class="symptoms-list">
+                        <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="chestPain">Chest pain or discomfort</span></li>
+                        <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="shortnessOfBreath">Shortness of breath</span></li>
+                        <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="irregularHeartbeat">Irregular heartbeat</span></li>
+                        <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="fatigue">Fatigue and weakness</span></li>
+                        <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="dizziness">Dizziness or lightheadedness</span></li>
+                    </ul>
+                    <div class="warning-box">
+                        <p><strong data-i18n="warning">Warning:</strong> <span data-i18n="warningMessage">If you experience severe chest pain or difficulty breathing, seek immediate medical attention.</span></p>
+                    </div>
+                </div>
+                <div class="image-gallery">
+                    <img src="image/Heart/21704-heart-overview-outside.jpg" alt="Heart Disease Symptoms">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Prevention Section -->
+    <section class="prevention-content" style="display: none;">
+        <div class="container">
+            <div class="heart-info">
+                <div class="text-content">
+                    <h2 data-i18n="preventionTitle">Heart Disease Prevention</h2>
+                    <p data-i18n="preventionDesc">Taking preventive measures can significantly reduce your risk of heart disease. Here are key prevention strategies:</p>
+                    <ul class="prevention-list">
+                        <li><i class="fa-solid fa-heart"></i> <span data-i18n="healthyDiet">Maintain a healthy diet rich in fruits and vegetables</span></li>
+                        <li><i class="fa-solid fa-person-walking"></i> <span data-i18n="regularExercise">Exercise regularly (at least 30 minutes daily)</span></li>
+                        <li><i class="fa-solid fa-ban-smoking"></i> <span data-i18n="quitSmoking">Quit smoking and avoid secondhand smoke</span></li>
+                        <li><i class="fa-solid fa-weight-scale"></i> <span data-i18n="healthyWeight">Maintain a healthy weight</span></li>
+                        <li><i class="fa-solid fa-bed"></i> <span data-i18n="adequateSleep">Get adequate sleep (7-9 hours)</span></li>
+                        <li><i class="fa-solid fa-pills"></i> <span data-i18n="controlHealth">Control blood pressure and cholesterol</span></li>
+                    </ul>
+                    <div class="info-box">
+                        <p><strong data-i18n="tip">Tip:</strong> <span data-i18n="preventionTip">Regular check-ups with your healthcare provider can help monitor your heart health and catch issues early.</span></p>
+                    </div>
+                </div>
+                <div class="image-gallery">
+                    <img src="image/Heart/view-graphic-3d-heart.jpg" alt="Heart Disease Prevention">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Treatment Section -->
+    <section class="treatment-content" style="display: none;">
+        <div class="container">
+            <div class="heart-info">
+                <div class="text-content">
+                    <h2 data-i18n="treatmentTitle">Heart Disease Treatment</h2>
+                    <p data-i18n="treatmentDesc">Treatment for heart disease depends on the specific condition and its severity. Here are common treatment approaches:</p>
+                    <ul class="treatment-list">
+                        <li><i class="fa-solid fa-pills"></i> <span data-i18n="medications">Medications</span>
+                            <span data-i18n="medicationsDesc">Including blood thinners, beta blockers, and statins</span>
+                        </li>
+                        <li><i class="fa-solid fa-heart-circle-check"></i> <span data-i18n="lifestyleChanges">Lifestyle Changes</span>
+                            <span data-i18n="lifestyleDesc">Diet modifications and regular exercise routines</span>
+                        </li>
+                        <li><i class="fa-solid fa-user-doctor"></i> <span data-i18n="medicalProcedures">Medical Procedures</span>
+                            <span data-i18n="proceduresDesc">Angioplasty, stent placement, or bypass surgery</span>
+                        </li>
+                        <li><i class="fa-solid fa-kit-medical"></i> <span data-i18n="rehabilitation">Cardiac Rehabilitation</span>
+                            <span data-i18n="rehabDesc">Supervised programs to improve heart health</span>
+                        </li>
+                        <li><i class="fa-solid fa-house-medical"></i> <span data-i18n="monitoring">Regular Monitoring</span>
+                            <span data-i18n="monitoringDesc">Frequent check-ups and testing</span>
+                        </li>
+                    </ul>
+                    <div class="treatment-box">
+                        <p><strong data-i18n="important">Important:</strong> <span data-i18n="treatmentNote">Always follow your healthcare provider's specific treatment plan and never adjust medications without consultation.</span></p>
+                    </div>
+                </div>
+                <div class="image-gallery">
+                    <img src="image/Heart/person-holding-anatomic-heart-model-educational-purpose.jpg" alt="Heart Disease Treatment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Treatment Section -->
+
+    <!-- Start Aside -->
+    <div class="aside" id="sidebar">
+        <div class="sidebar">
+            <h3 data-i18n="overview">Overview</h3>
+            <ul>
+                <li><a href="#home" class="home-link" data-i18n="home">Home</a></li>
+                <li><a href="#symptoms" data-i18n="symptoms">Symptoms</a></li>
+                <li><a href="#prevention" data-i18n="prevention">Prevention</a></li>
+                <li><a href="#treatment" data-i18n="treatment">Treatment</a></li>
+                <li><a href="#prediction" data-i18n="prediction">Prediction</a></li>
+            </ul>
+
+            <h3 data-i18n="welcome">Welcome</h3>
+            <p data-i18n="welcomeMessage">>Welcome to our Heat health information center. Here you'll find valuable resources about Heart Disease awareness and prevention."</p>
+
+            <h3 data-i18n="didYouKnow">Hi!</h3>
+            <p data-i18n="worldHeartDay">Every year on <strong>September 29</strong>, the world celebrates World Heart Day to raise awareness about cardiovascular diseases (CVD) and to encourage everyone to live a heart-healthy lifestyle.</p>
+
+        </div>
+    </div>
+    <!-- End Aside -->
+
+    <!-- Update Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainContent = document.querySelector('.main-content');
+        const symptomsContent = document.querySelector('.symptoms-content');
+        const preventionContent = document.querySelector('.prevention-content');
+        const treatmentContent = document.querySelector('.treatment-content');
+        const menuIcon = document.querySelector('.menu-icon');
+        const sidebar = document.getElementById('sidebar');
+
+        function hideAllSections() {
+            mainContent.style.display = 'none';
+            symptomsContent.style.display = 'none';
+            preventionContent.style.display = 'none';
+            treatmentContent.style.display = 'none';
+        }
+
+        // Handle window resize
+        function handleResize() {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('hidden');
+                sidebar.style.display = 'block';
+            } else {
+                sidebar.classList.add('hidden');
+            }
+        }
+
+        // Initial check
+        handleResize();
+
+        // Listen for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Toggle sidebar on menu icon click (mobile only)
+        menuIcon.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.stopPropagation();
+                sidebar.classList.toggle('hidden');
+            }
+        });
+
+        // Hide sidebar when clicking outside (mobile only)
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(event.target) && 
+                !menuIcon.contains(event.target)) {
+                sidebar.classList.add('hidden');
+            }
+        });
+
+        // Prevent clicks inside sidebar from closing it
+        sidebar.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Handle navigation clicks
+        const links = sidebar.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.add('hidden');
+                }
+            });
+        });
+
+        // Content handlers remain the same
+        const homeLink = document.querySelector('.home-link');
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideAllSections();
+            mainContent.style.display = 'block';
+        });
+
+        const symptomsLink = document.querySelector('a[href="#symptoms"]');
+        symptomsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideAllSections();
+            symptomsContent.style.display = 'block';
+        });
+
+        const preventionLink = document.querySelector('a[href="#prevention"]');
+        preventionLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideAllSections();
+            preventionContent.style.display = 'block';
+        });
+
+        const treatmentLink = document.querySelector('a[href="#treatment"]');
+        treatmentLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideAllSections();
+            treatmentContent.style.display = 'block';
+        });
+
+        // Add handler for Prediction link
+        const predictionLink = document.querySelector('a[href="#prediction"]');
+        predictionLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideAllSections();
+            document.querySelector('.prediction-content').style.display = 'block';
+        });
+
+        // Handle form submission
+        const predictionForm = document.getElementById('heart-prediction-form');
+        const resultElement = document.getElementById('result');
+
+        predictionForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Collect form data
+            const formData = new FormData(predictionForm);
+            const features = [];
+            // The API expects features in a specific order.
+            // Ensure the order matches the model's expectation:
+            // ['age', 'sex', 'cp', 'trestbps', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
+            const featureNames = ['age', 'sex', 'cp', 'trestbps', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal'];
+
+            featureNames.forEach(name => {
+                 // Convert input values to numbers
+                 features.push(parseFloat(formData.get(name)));
+            });
+
+
+            // API Endpoint (replace with your actual deployed API URL)
+            // If running locally, use the local address, e.g., 'http://127.0.0.1:5500/predict-heart'
+            const apiUrl = 'http://127.0.0.1:5500/predict-heart'; // IMPORTANT: Update this when deployed
+
+            // Send data to API
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ features: features })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display result
+                if (data.prediction !== undefined) {
+                    resultElement.textContent = data.prediction === 1 ? 'High risk of Heart Disease' : 'Low risk of Heart Disease';
+                } else if (data.error) {
+                    resultElement.textContent = 'Error: ' + data.error;
+                } else {
+                     resultElement.textContent = 'Unexpected response from API.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultElement.textContent = 'Error connecting to the API.';
+            });
+        });
+    });
+    </script>
+
+    <!-- Add before closing body tag -->
+    <script src="js/translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButton = document.querySelector('.lang-toggle-btn');
+            const flagWrappers = document.querySelectorAll('.flag-wrapper');
+            const htmlElement = document.documentElement;
+            
+            // Set initial language
+            const savedLang = localStorage.getItem('language') || 'en';
+            updateLanguage(savedLang);
+            
+            langButton.addEventListener('click', function() {
+                const currentLang = htmlElement.lang;
+                const newLang = currentLang === 'en' ? 'ar' : 'en';
+                updateLanguage(newLang);
+                localStorage.setItem('language', newLang);
+                
+                // Update button aria-label
+                const newLabel = newLang === 'en' ? 'Switch to Arabic' : 'Switch to English';
+                this.setAttribute('aria-label', newLabel);
+            });
+            
+            function updateLanguage(lang) {
+                // Update active flag wrapper
+                flagWrappers.forEach(wrapper => {
+                    if (wrapper.classList.contains(lang)) {
+                        wrapper.classList.add('active');
+                        wrapper.style.display = 'flex';
+                    } else {
+                        wrapper.classList.remove('active');
+                        wrapper.style.display = 'none';
+                    }
+                });
+                
+                // Set document direction and language
+                htmlElement.lang = lang;
+                htmlElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                
+                // Update all translations
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.dataset.i18n;
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'INPUT') {
+                            if (element.type === 'text' || element.type === 'number') {
+                                element.placeholder = translations[lang][key];
+                            }
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

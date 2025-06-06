@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - HealthCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/Login_page/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Login Form -->
+        <div id="loginSection">
+        <div class="login-header">
+            <h1>Welcome to HealthCare</h1>
+            <p>Log in to your account</p>
+        </div>
+        <form id="loginForm" action="/api/login" method="POST">
+            <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required autocomplete="email">
+                    <div class="error-message" id="loginEmailError"></div>
+            </div>
+            <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                <div style="position: relative;">
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                        <button type="button" id="toggleLoginPassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    </div>
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+                <a href="#" class="forgot-password" id="switchToForgot">Forgot Password?</a>
+                <button type="submit" class="submit-btn">Log in</button>
+                <div class="form-footer">
+                    Don't have an account? <a href="#" id="switchToSignup">Create account</a>
+                </div>
+            </form>
+            <div class="divider">
+                <span>or</span>
+            </div>
+            <div class="social-login">
+                <button type="button" class="social-btn google-btn">
+                    <i class="fa-brands fa-google fa-2xl"></i>
+                    <span>Continue with Google</span>
+                </button>
+            </div>
+        </div>
+        <!-- Signup Form -->
+        <div id="signupSection" style="display: none;">
+            <div class="signup-header">
+                <h1>Create your account</h1>
+                <p>Join HealthCare for better healthcare services</p>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Name</label>
+                    <input type="text" id="signupName" name="name" placeholder="Enter your name" required autocomplete="name">
+                    <div class="error-message" id="signupNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required autocomplete="email">
+                    <div class="error-message" id="signupEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="signupPassword" name="password" placeholder="Create a password" required autocomplete="new-password">
+                        <button type="button" id="toggleSignupPassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="signupPasswordError"></div>
+                </div>
+                <button type="submit" class="submit-btn">Create account</button>
+                <div class="form-footer">
+                    Already have an account? <a href="#" id="switchToLogin">Log in</a>
+            </div>
+        </form>
+        <div class="divider">
+            <span>or</span>
+        </div>
+        <div class="social-login">
+            <button type="button" class="social-btn google-btn">
+                <i class="fa-brands fa-google fa-2xl"></i>
+                    <span>Continue with Google</span>
+            </button>
+        </div>
+    </div>
+        <!-- Forgot Password Form -->
+        <div id="forgotSection" class="login-container" style="display: none;">
+            <div class="login-header">
+                <h1>Forgot Password</h1>
+                <p>Enter your email to reset your password</p>
+            </div>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotEmail">Email</label>
+                    <input type="email" id="forgotEmail" name="email" placeholder="Enter your email" required autocomplete="email">
+                    <div class="error-message" id="forgotEmailError"></div>
+                </div>
+                <button type="submit" class="submit-btn">Reset Password</button>
+                <div class="form-footer">
+                    Remember your password? <a href="#" id="switchToLoginFromForgot">Log in</a>
+                </div>
+            </form>
+            <div class="divider">
+                <span>or</span>
+            </div>
+            <div class="social-login">
+                <button type="button" class="social-btn google-btn">
+                    <i class="fa-brands fa-google fa-2xl"></i>
+                    <span>Continue with Google</span>
+                </button>
+            </div>
+            <div class="success-message" id="forgotSuccessMsg" style="display:none;"></div>
+        </div>
+        <!-- Profile Section -->
+        <div id="profileSection" class="login-container" style="display: none;">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-details">
+                        <h2 id="userEmail">Loading...</h2>
+                        <p>Member since <span id="memberSince">Loading...</span></p>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+            <div class="history-section">
+                <h3>Checkup History</h3>
+                <div id="historyList" class="history-list">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sections
+            const loginSection = document.getElementById('loginSection');
+            const signupSection = document.getElementById('signupSection');
+            const forgotSection = document.getElementById('forgotSection');
+            const profileSection = document.getElementById('profileSection');
+            // Switch links
+            const switchToSignup = document.getElementById('switchToSignup');
+            const switchToLogin = document.getElementById('switchToLogin');
+            const switchToForgot = document.getElementById('switchToForgot');
+            const switchToLoginFromForgot = document.getElementById('switchToLoginFromForgot');
+            // Login form elements
+            const loginForm = document.getElementById('loginForm');
+            const loginEmail = document.getElementById('loginEmail');
+            const loginPassword = document.getElementById('loginPassword');
+            const loginEmailError = document.getElementById('loginEmailError');
+            const loginPasswordError = document.getElementById('loginPasswordError');
+            const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+            // Signup form elements
+            const signupForm = document.getElementById('signupForm');
+            const signupName = document.getElementById('signupName');
+            const signupEmail = document.getElementById('signupEmail');
+            const signupPassword = document.getElementById('signupPassword');
+            const signupNameError = document.getElementById('signupNameError');
+            const signupEmailError = document.getElementById('signupEmailError');
+            const signupPasswordError = document.getElementById('signupPasswordError');
+            const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+            // Forgot password form elements
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+            const forgotEmail = document.getElementById('forgotEmail');
+            const forgotEmailError = document.getElementById('forgotEmailError');
+            const forgotSuccessMsg = document.getElementById('forgotSuccessMsg');
+            // Profile elements
+            const logoutBtn = document.getElementById('logoutBtn');
+            // Toggle between sections
+            function showSection(section) {
+                loginSection.style.display = 'none';
+                signupSection.style.display = 'none';
+                forgotSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                section.style.display = 'block';
+            }
+            switchToSignup.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(signupSection);
+            });
+            switchToLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(loginSection);
+            });
+            switchToForgot.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(forgotSection);
+            });
+            switchToLoginFromForgot.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(loginSection);
+            });
+            // Toggle password visibility (login)
+            toggleLoginPassword.addEventListener('click', function() {
+                const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                loginPassword.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+            // Toggle password visibility (signup)
+            toggleSignupPassword.addEventListener('click', function() {
+                const type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                signupPassword.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+            // Validation helpers
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            function showError(element, message) {
+                element.style.display = 'block';
+                element.textContent = message;
+            }
+            function hideError(element) {
+                element.style.display = 'none';
+            }
+            // Login form validation
+            loginEmail.addEventListener('input', function() {
+                if (!validateEmail(this.value)) {
+                    showError(loginEmailError, 'Please enter a valid email address');
+                } else {
+                    hideError(loginEmailError);
+                }
+            });
+            loginPassword.addEventListener('input', function() {
+                if (this.value.length < 6) {
+                    showError(loginPasswordError, 'Password must be at least 6 characters');
+                } else {
+                    hideError(loginPasswordError);
+                }
+            });
+            // Signup form validation
+            signupName.addEventListener('input', function() {
+                if (this.value.trim().length === 0) {
+                    showError(signupNameError, 'Name is required');
+                } else {
+                    hideError(signupNameError);
+                }
+            });
+            signupEmail.addEventListener('input', function() {
+                if (!validateEmail(this.value)) {
+                    showError(signupEmailError, 'Please enter a valid email address');
+                } else {
+                    hideError(signupEmailError);
+                }
+            });
+            signupPassword.addEventListener('input', function() {
+                if (this.value.length < 6) {
+                    showError(signupPasswordError, 'Password must be at least 6 characters');
+                } else {
+                    hideError(signupPasswordError);
+                }
+            });
+            // Forgot password form validation
+            forgotEmail.addEventListener('input', function() {
+                if (!validateEmail(this.value)) {
+                    showError(forgotEmailError, 'Please enter a valid email address');
+                } else {
+                    hideError(forgotEmailError);
+                }
+            });
+            // Login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!validateEmail(loginEmail.value)) {
+                    showError(loginEmailError, 'Please enter a valid email address');
+                    return;
+                }
+                if (loginPassword.value.length < 6) {
+                    showError(loginPasswordError, 'Password must be at least 6 characters');
+                    return;
+                }
+                fetch('http://localhost:5501/api/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+                        email: loginEmail.value,
+                        password: loginPassword.value
+    })
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Login failed');
+    }
+    return response.json();
+})
+.then(data => {
+    if (data.access_token) {
+        localStorage.setItem('access_token', data.access_token);
+                        showSection(profileSection);
+                        loadProfile();
+    } else {
+                        showError(loginPasswordError, data.error || 'Login failed');
+    }
+})
+.catch(error => {
+                    showError(loginPasswordError, 'An error occurred during login');
+                });
+            });
+            // Signup form submission
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                if (signupName.value.trim().length === 0) {
+                    showError(signupNameError, 'Name is required');
+                    isValid = false;
+                }
+                if (!validateEmail(signupEmail.value)) {
+                    showError(signupEmailError, 'Please enter a valid email address');
+                    isValid = false;
+                }
+                if (signupPassword.value.length < 6) {
+                    showError(signupPasswordError, 'Password must be at least 6 characters');
+                    isValid = false;
+                }
+                if (!isValid) return;
+                fetch('http://localhost:5501/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: signupEmail.value, // backend expects 'username'
+                        password: signupPassword.value
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.msg === 'User registered successfully') {
+                        alert('Registration successful! Please log in.');
+                        showSection(loginSection);
+                    } else {
+                        showError(signupEmailError, data.msg || 'Registration failed');
+                    }
+                })
+                .catch(error => {
+                    showError(signupEmailError, 'An error occurred. Please try again.');
+                });
+            });
+            // Forgot password form submission
+            forgotPasswordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!validateEmail(forgotEmail.value)) {
+                    showError(forgotEmailError, 'Please enter a valid email address');
+                    return;
+                }
+                // Simulate API call
+                forgotSuccessMsg.style.display = 'block';
+                forgotSuccessMsg.textContent = 'If an account exists with this email, you will receive password reset instructions.';
+                setTimeout(() => {
+                    forgotSuccessMsg.style.display = 'none';
+                    showSection(loginSection);
+                }, 2500);
+            });
+            // Profile logic
+            function loadProfile() {
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    showSection(loginSection);
+                    return;
+                }
+                fetch('http://localhost:5501/protected', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('userEmail').textContent = data.msg.split(', ')[1].replace('!', '');
+                    document.getElementById('memberSince').textContent = new Date().toLocaleDateString();
+                })
+                .catch(error => {
+                    showSection(loginSection);
+                });
+                // Load history
+                fetch('http://localhost:5501/history', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const historyList = document.getElementById('historyList');
+                    if (data.history && data.history.length > 0) {
+                        historyList.innerHTML = data.history.map(item => `
+                            <div class="history-item">
+                                <h4>${item.type}</h4>
+                                <p>${item.result}</p>
+                                <div class="date">${new Date(item.date).toLocaleDateString()}</div>
+                            </div>
+                        `).join('');
+                    } else {
+                        historyList.innerHTML = `
+                            <div class="no-history">
+                                <i class="fas fa-history fa-2x"></i>
+                                <p>No checkup history available</p>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('historyList').innerHTML = `
+                        <div class="no-history">
+                            <p>Error loading history</p>
+                        </div>
+                    `;
+                });
+            }
+            // Logout
+            logoutBtn.addEventListener('click', function() {
+                localStorage.removeItem('access_token');
+                showSection(loginSection);
+            });
+            // On page load, check if logged in
+            (function init() {
+                const token = localStorage.getItem('access_token');
+                if (token) {
+                    showSection(profileSection);
+                    loadProfile();
+                } else {
+                    showSection(loginSection);
+                }
+            })();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+/* =========================
+   Global Styles
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F5F5F5;
+    font-size: 1rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* =========================
+   Header Styles
+   ========================= */
+.header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo i {
+    color: #FF96A7;
+}
+
+.logo span {
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FF96A7;
+}
+
+/* =========================
+   Menu Icon Styles
+   ========================= */
+.menu-icon {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+    color: #FF96A7;
+}
+
+/* =========================
+   Main Content Styles
+   ========================= */
+.main-content, .symptoms-content, .prevention-content, .treatment-content {
+    margin-top: 80px;
+    margin-left: 300px;
+    padding: 2rem 0;
+}
+
+.heart-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.text-content {
+    padding: 1rem;
+}
+
+.text-content h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #FF96A7;
+    padding-bottom: 10px;
+}
+
+.text-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.heart-facts, .symptoms-list, .prevention-list, .treatment-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.heart-facts li, .symptoms-list li, .prevention-list li, .treatment-list li {
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-size: 1.1rem;
+}
+
+.heart-facts li:before {
+    content: "•";
+    color: #FF96A7;
+    position: absolute;
+    left: 0;
+}
+
+.image-gallery img {
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   Warning and Info Boxes
+   ========================= */
+.warning-box, .info-box, .treatment-box {
+    background-color: #FFFFFF;
+    border-left: 4px solid #FF96A7;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.warning-box p, .info-box p, .treatment-box p {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   Sidebar Styles
+   ========================= */
+.aside {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 275px;
+    height: calc(100vh - 70px);
+    background-color: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    overflow-y: auto;
+    display: block;
+}
+
+/* RTL Support */
+[dir="rtl"] .aside {
+    left: auto;
+    right: 0;
+    border-right: none;
+    border-left: 1px solid #e9ecef;
+}
+
+[dir="rtl"] .main-content,
+[dir="rtl"] .symptoms-content,
+[dir="rtl"] .prevention-content,
+[dir="rtl"] .treatment-content {
+    margin-left: 0;
+    margin-right: 300px;
+}
+
+[dir="rtl"] .warning-box,
+[dir="rtl"] .info-box,
+[dir="rtl"] .treatment-box {
+    border-left: none;
+    border-right: 4px solid #FF96A7;
+}
+
+[dir="rtl"] .heart-facts li:before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .heart-facts {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.sidebar {
+    padding: 20px;
+    display: block;
+}
+
+.sidebar h3 {
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #FF96A7;
+    padding-bottom: 8px;
+    display: block;
+}
+
+.sidebar h3:first-child {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+
+.sidebar ul li a:hover {
+    color: #FF96A7;
+}
+
+.sidebar p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 1rem;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .aside {
+        display: none;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        left: auto;
+        width: 250px;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        background-color: white;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid #e9ecef;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        z-index: 1000;
+    }
+
+    .aside:not(.hidden) {
+        display: block;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .sidebar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+        background-color: #FF96A7;
+        color: white;
+    }
+
+    /* Only hide Welcome and Hi sections on mobile */
+    .sidebar h3:not(:first-child),
+    .sidebar p {
+        display: none;
+    }
+}
+
+/* Animation for Content Transitions */
+.main-content, .symptoms-content, .prevention-content, .treatment-content {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-switcher {
+    margin-left: 20px;
+}
+
+.lang-toggle-btn {
+    background: #fff;
+    border: 2px solid #FF96A7;
+    border-radius: 30px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 90px;
+    justify-content: center;
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+}
+
+.lang-toggle-btn:hover {
+    background: #f8f9fa;
+    transform: scale(1.05);
+}
+
+.flag-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.flag-icon.en {
+    right: 5px;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.flag-icon.ar {
+    left: 5px;
+    transform: translateX(0);
+    opacity: 0;
+}
+
+/* Active states for RTL and LTR */
+[dir="rtl"] .flag-icon.en {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+[dir="rtl"] .flag-icon.ar {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* RTL Support */
+[dir="rtl"] .language-switcher {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .lang-toggle-btn {
+        width: 80px;
+        height: 35px;
+    }
+
+    .flag-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
